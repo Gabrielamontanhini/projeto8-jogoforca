@@ -1,0 +1,100 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.direita button {
+    width: 300px;
+    height: 90px;
+ margin-top: 30px;
+    background: #27AE60;
+    border-radius: 8px;
+    border: none;
+}
+
+button p{
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+img {
+    height: 460px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.forca {
+    width: 50vw;
+    height: 65vh;
+}
+
+
+.direita {
+    width: 50vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+    font-family: 'Roboto';
+font-style: normal;
+margin-bottom: 100px;
+font-weight: 700;
+font-size: 50px;
+line-height: 68px;
+}
+
+footer {
+    width: 100vw;
+    height: 35vh;
+    /*background-color: plum;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.painel {
+    margin-top: 20px;
+ /*   background-color: burlywood;*/
+    display: flex;
+    width: 995px;
+    flex-wrap: wrap;
+}
+
+.letra {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:
+        #E1ECF4;
+    border: 2px solid #7AA7C7;
+    margin: 15px;
+}
+
+button {
+    color:
+        #39739D;
+    font-size: 32px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+}
+
+.acertada{
+    color: #27AE60;
+
+}
+.errada{
+    color: #FF0000;
+}
+.clicada{
+    background-color:  #9FAAB5;
+    pointer-events: none;
+}
