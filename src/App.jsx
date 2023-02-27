@@ -31,6 +31,10 @@ function App() {
 
   function pegarPalavra() {
     setDisabled(false)
+    setLetrasClicadas([])
+    setErros(0)
+    setResultado("")
+    setImagemDeErro(forcas[0])
     let palavraPickada = palavras[Math.round(Math.random() * palavras.length)]
     var palavraIncognita = palavraPickada.split('')
     setPalavraEscolhida(palavraIncognita)
@@ -40,6 +44,15 @@ function App() {
     setPalavraEscondida(comUnderline)
     console.log(comUnderline)
   }
+
+
+  /*function verificar(){
+    console.log("escolhida",palavraEscolhida.toString());
+    console.log("escondida",palavraEscondida.toString())
+    if (palavraEscolhida === palavraEscondida){
+      alert("deu")
+    }
+  }*/
 
   function clicou(letra) {
 
@@ -51,6 +64,7 @@ function App() {
     
     console.log(palavraEscolhida)
 
+    let acertou = 0
 
     if (palavraEscolhida.includes(letra) == true) {
 
@@ -61,9 +75,18 @@ function App() {
           acerto.pop()
           console.log(acerto)
           setPalavraEscondida(acerto)
+        for (let i=0; i<palavraEscolhida.length; i++){
+          if (palavraEscolhida[i]===palavraEscondida[i]){
+            
+            acertou = acertou + 1
+            console.log(acertou)
+            if (acertou === palavraEscolhida.length){
+              setResultado("acertada")
+            }
+          }
+        }
         }
       }
-      console.log(palavraEscondida.toString())
     } else {
       let aumentaErro = erros + 1;
     setErros(aumentaErro)
@@ -97,10 +120,9 @@ function App() {
 
 
           {alfabeto.map((l, i) =>
-            <div className={`letra ${letrasClicadas.includes(l) && 'clicada'}
-          `}
+            <div className={`letra `} 
               onClick={() => clicou(l)}>
-              < Letras disabled={disabled} letra={l} indice={i} />
+              < Letras disabled= {(letrasClicadas.includes(l)) ? true : disabled} letra={l} indice={i} />
             </div>
           )}
 
